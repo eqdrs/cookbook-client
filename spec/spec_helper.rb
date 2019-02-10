@@ -1,5 +1,12 @@
-require "bundler/setup"
-require "cookbook_client"
+require 'bundler/setup'
+require 'recipe'
+require 'simplecov'
+
+SimpleCov.start
+
+require 'byebug'
+require 'webmock/rspec'
+Dir["#{File.dirname(__FILE__)}/../lib/*.rb"].each { |f| require_relative f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
