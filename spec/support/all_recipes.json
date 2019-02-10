@@ -36,7 +36,8 @@
     "updated_at": "2019-02-10T00:46:48.037Z",
     "ingredients": "Feijão, carne e tempero.",
     "cook_method": "Misture tudo e ferva.",
-    "recipe_type_id": 2, "cuisine_id": 1,
+    "recipe_type_id": 2,
+    "cuisine_id": 1,
     "user_id": 1,
     "highlight": false
   }

@@ -27,6 +27,12 @@ class Recipe
     recipes = create_recipes(recipes)
   end
 
+  def self.find(id)
+    uri = URI("http://localhost:3000/api/v1/recipes/#{id}")
+    recipe = JSON.parse(Net::HTTP.get(uri))
+    recipe = Recipe.new(params: recipe)
+  end
+
   def self.create_recipes(recipes)
     array = []
     recipes.each { |r| array << Recipe.new(params: r) }
