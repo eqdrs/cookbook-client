@@ -1,4 +1,4 @@
-require "cookbook_client/version"
+require 'cookbook_client/version'
 
 module CookbookClient
   class Error < StandardError; end
