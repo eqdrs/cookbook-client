@@ -2,7 +2,6 @@ require 'net/http'
 require 'json'
 
 class Recipe
-
   attr_accessor :title, :difficulty, :cook_time, :ingredients, :cook_method,
                 :recipe_type_id, :cuisine_id, :user_id, :highlight,
                 :created_at, :updated_at
@@ -24,13 +23,13 @@ class Recipe
   def self.all
     uri = URI('http://localhost:3000/api/v1/recipes')
     recipes = JSON.parse(Net::HTTP.get(uri))
-    recipes = create_recipes(recipes)
+    create_recipes(recipes)
   end
 
   def self.find(id)
     uri = URI("http://localhost:3000/api/v1/recipes/#{id}")
     recipe = JSON.parse(Net::HTTP.get(uri))
-    recipe = Recipe.new(params: recipe)
+    Recipe.new(params: recipe)
   end
 
   def self.create_recipes(recipes)
